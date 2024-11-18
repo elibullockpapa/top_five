@@ -16,3 +16,6 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: Fetch a random joke
+        run: |
+          curl -H "Accept: application/json" https://icanhazdadjoke.com/ | jq '.joke'
